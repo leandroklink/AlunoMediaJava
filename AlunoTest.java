@@ -20,12 +20,24 @@ public class AlunoTest {
         double nota2 = scanner.nextDouble();
         
         Aluno aluno = new Aluno(nome, nota1, nota2);
+       
 
         System.out.printf("Aluno: %s\n", aluno.getNome());
         System.out.printf("Nota 1: %.2f\n", aluno.getNota1());
         System.out.printf("Nota 2: %.2f\n", aluno.getNota2());
         System.out.printf("Média: %.2f\n", aluno.calcularMedia());    
         System.out.printf("Situação: %s\n", aluno.situacao());
+        
+        Aluno aluno2 = new Aluno(); //metodo para testar o construtor sem valores
+        
+        
+        System.out.printf("Aluno: %s\n", aluno2.getNome());
+        System.out.printf("Nota 1: %.2f\n", aluno2.getNota1());
+        System.out.printf("Nota 2: %.2f\n", aluno2.getNota2());
+        System.out.printf("Média: %.2f\n", aluno2.calcularMedia());    
+        System.out.printf("Situação: %s\n", aluno2.situacao());
+        
+        
 
         }
     }

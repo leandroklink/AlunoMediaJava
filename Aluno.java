@@ -1,15 +1,19 @@
 package alunomedia;
 
-public class Aluno {
-    private String nome;
-    private double nota1;
-    private double nota2;
+public final class Aluno {
+    private final String nome;
+    private final double nota1;
+    private final double nota2;
     
     public Aluno(String nome, double nota1, double nota2){
         this.nome = nome;
         this.nota1 = nota1;
         this.nota2 = nota2;   
     }
+    public Aluno(){
+        this("Sem nome", 0.0, 0.0); //construtor vazio sem valores
+    }
+    
     public double calcularMedia(){
         return (this.nota1 + this.nota2)/2;
     }
