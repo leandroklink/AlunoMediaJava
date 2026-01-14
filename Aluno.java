@@ -10,9 +10,7 @@ public final class Aluno {
         this.nota1 = nota1;
         this.nota2 = nota2;   
     }
-    public Aluno(){
-        this("Sem nome", 0.0, 0.0); //construtor vazio sem valores
-    }
+
     
     public double calcularMedia(){
         return (this.nota1 + this.nota2)/2;
@@ -24,10 +22,5 @@ public final class Aluno {
     public String getNome(){
         return this.nome;
     }
-    public double getNota1(){
-        return this.nota1;
-    }
-    public double getNota2(){
-        return this.nota2;
-    }
+
 }

@@ -4,40 +4,36 @@
  */
 package alunomedia;
 import java.util.Scanner;
-
+import java.util.ArrayList;
         
 public class AlunoTest {
 
     public static void main(String[] args) {
+        
         Scanner scanner = new Scanner(System.in);
+        ArrayList<Aluno> alunoLista = new ArrayList<>();
         
-        System.out.println("Digite o nome do aluno: ");
-        String nome = scanner.nextLine();
+        for (int i = 1; i <4; i++){
+            System.out.printf("Digite o nome do aluno %d: ", i);
+            String nome = scanner.nextLine();
+            
+            System.out.printf("Digite a nota do aluno %d: ", i);
+            double nota1 = scanner.nextDouble();
+            
+            System.out.printf("Digite a segunda nota do aluno %d: ", i);
+            double nota2 = scanner.nextDouble();
+            scanner.nextLine();
+            
+            Aluno aluno = new Aluno(nome, nota1, nota2);
+            alunoLista.add(aluno);
+            }
         
-        System.out.println("Digite a primeira nota: ");
-        double nota1 = scanner.nextDouble();
-        System.out.println("Digite a seguinda nota: ");
-        double nota2 = scanner.nextDouble();
-        
-        Aluno aluno = new Aluno(nome, nota1, nota2);
-       
-
-        System.out.printf("Aluno: %s\n", aluno.getNome());
-        System.out.printf("Nota 1: %.2f\n", aluno.getNota1());
-        System.out.printf("Nota 2: %.2f\n", aluno.getNota2());
-        System.out.printf("Média: %.2f\n", aluno.calcularMedia());    
-        System.out.printf("Situação: %s\n", aluno.situacao());
-        
-        Aluno aluno2 = new Aluno(); //metodo para testar o construtor sem valores
-        
-        
-        System.out.printf("Aluno: %s\n", aluno2.getNome());
-        System.out.printf("Nota 1: %.2f\n", aluno2.getNota1());
-        System.out.printf("Nota 2: %.2f\n", aluno2.getNota2());
-        System.out.printf("Média: %.2f\n", aluno2.calcularMedia());    
-        System.out.printf("Situação: %s\n", aluno2.situacao());
-        
-        
-
+            //impressão
+            System.out.println("\n====== Lista de alunos ======\n");
+            for (Aluno a : alunoLista){
+                System.out.printf("%s | Média: %.2f | Situação: %s%n", 
+                        a.getNome(), a.calcularMedia(), a.situacao());
+            }
+  
         }
     }
